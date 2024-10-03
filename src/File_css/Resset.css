@@ -1,0 +1,48 @@
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+    font-family: 'inder';
+    src: url("../Resset/Font/inder/Inder-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'poppin';
+    src: url("../Resset/Font/poppins/Poppins-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'syne';
+    src: url("../Resset/Font/syne/Syne-Bold.otf"),url("../Resset/Font/syne/Syne-Mono.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+:root{
+    --colorMain:#4E67C2;
+    --colorTitle:#3981B8;
+    --colorSection:#F6F6F6;
+    --colorSectionmid:rgba(246,246,246,.49);
+    --colorB:black;
+    --colorW:White;
+    --font_inder:"inder",sans-serif;
+    --font_poppin:"poppin",sans-serif;
+    --font_syne:"syne",sans-serif;
+}
+
+
+
+/* Regle injecter */
+
