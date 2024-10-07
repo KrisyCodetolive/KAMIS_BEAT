@@ -1,6 +1,59 @@
 @import "../File_css/Resset.css";
 
 .footer{
-    border: 1px solid black ;
+    /* border: 1px solid black ; */
+    display: flex;
+    height: 100px;
+}
+
+
+.footer-logo, .footer-menu1, .footer-menu2{
+    display: inline-block;
+    width: 125px;
+    /* border: 1px solid #d42c2c; */
+    font-family: syne;
+    color: #4E67C2;
+    font-size: 10px;
+}
+.footer-menu2{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.footer-menu1{
+    padding-top: 5px;
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+
+
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    list-style: none;
     
 }
+li{
+    cursor: pointer;
+}
+.footer-logo{
+    display: flex;
+    align-items: center;
+    
+}
+.link-contact{
+    display: flex;
+    margin-top: 5px;
+    gap: 5px;
+}
+.logo-footer{
+    width: 20px;
+    height: 20px;
+}
+
