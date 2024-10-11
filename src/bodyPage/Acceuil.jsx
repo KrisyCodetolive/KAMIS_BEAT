@@ -1,4 +1,4 @@
-import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com, Play, Pause } from '../bodyPage/Import'
+import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com , download , Play } from '../bodyPage/Import'
 
 export function Acceuil(){
 
@@ -89,19 +89,85 @@ export function Acceuil(){
                     <ul className="content-il">
                         <il className=" vue place1">
 
-                        <img src={trap} width="50px" height="50px" className="image" alt="" />
+                            <img src={trap} width="50px" height="50px" className="image" alt="" />
 
-                        <span className="t-i">Faux coeur</span>
-                        <span className="t-t">Faux coeur</span>
-                        <span className="t-b">Faux coeur</span>
+                            <div className="content-t">
+                                <span className="t-i">Faux coeur</span>
+                                <span className="t-t">02:45</span>
+                                <span className="t-b">145</span>
+                                <span className="t-ty">trap rap</span>
 
+                                <span className="icone" width="40px">
+                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
+                                <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                </span>
+                            </div>
 
-                        
 
                         </il>
-                        <il className="vue place2"></il>
-                        <il className="vue place3"></il>
-                        <il className="vue place4"></il>
+
+                        <span className="bar"></span>
+
+                        <il className="vue place2">
+
+                            <img src={rap} width="50px" height="50px" className="image" alt="" />
+
+                            <div className="content-t">
+                                <span className="t-i">Fauc coeur</span>
+                                <span className="t-t">02:45</span>
+                                <span className="t-b">145</span>
+                                <span className="t-ty">trap rap</span>
+
+                                <span className="icone" width="40px">
+                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
+                                <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                </span>
+                            </div>
+
+                           
+                        </il>
+
+                        <span className="bar"></span>
+
+                        <il className="vue place3">
+                            <img src={afro} width="50px" height="50px" className="image" alt="" />
+
+                            <div className="content-t">
+                                <span className="t-i">Faux coeur</span>
+                                <span className="t-t">02:45</span>
+                                <span className="t-b">145</span>
+                                <span className="t-ty">trap rap</span>
+
+                                <span className="icone" width="40px">
+                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
+                                <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                </span>
+                            </div>
+
+                            
+                        </il>
+
+                        <span className="bar"></span>
+
+                        <il className="vue place4">
+                            <img src={trap} width="50px" height="50px" className="image" alt="" />
+
+                            <div className="content-t">
+                                <span className="t-i">Faux coeur</span>
+                                <span className="t-t">02:45</span>
+                                <span className="t-b">145</span>
+                                <span className="t-ty">trap rap</span>
+
+                                <span className="icone" width="40px">
+                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
+                                <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                </span>
+                            </div>
+
+                            
+                        </il>
+
+                        <span className="bar"></span>
                     </ul>
                 </div>
 
