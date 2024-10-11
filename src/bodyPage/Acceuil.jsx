@@ -1,4 +1,4 @@
-import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com } from '../bodyPage/Import'
+import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com, Play, Pause } from '../bodyPage/Import'
 
 export function Acceuil(){
 
@@ -13,20 +13,21 @@ export function Acceuil(){
                 {/* <h1 className="reh1">Recommandé</h1> */}
 
                 <div className="conteneur-rec">
+
                     <img src={Arrow} className='Arrow' alt="" />
+
                     <div className="conteneur-Aff">
 
+                        <div className="lueur">
+                        </div>
                         
-
                         <div className="secondaire1">
                             <img src={rap} className='second-1' alt="" />
-
                         </div>
 
                         <div className="Aff-main">
 
-                            <div className="lueur">
-                            </div>
+                            
 
                             <img src={trap} className='Main-Aff' alt="" />
 
@@ -53,7 +54,61 @@ export function Acceuil(){
             </section>
 
 
-            <section className="instrumental"><h1 className="reh1">Instrumental</h1></section>
+            <section className="instrumental">
+                <h1 className="reh1">Instrumental</h1>
+
+                <div className="header">
+
+                    <div className="all">
+                        All
+                    </div>
+
+                    <div className="catégorie">
+                        Catégorie
+                    </div>
+
+                    <div className="payant">
+                        Instru payantes
+                    </div>
+
+                    <div className="free">
+                        Instru gratuite
+                    </div>
+
+                </div>
+
+                <div className="content-instru">
+
+                    <div className="titre">
+                        <span className="T">Titre</span>
+                        <span className="Te">Temps</span>
+                        <span className="B">Bpm</span>
+                        <span className="Ty">Type</span>
+                    </div>
+
+                    <ul className="content-il">
+                        <il className=" vue place1">
+
+                        <img src={trap} width="50px" height="50px" className="image" alt="" />
+
+                        <span className="t-i">Faux coeur</span>
+                        <span className="t-t">Faux coeur</span>
+                        <span className="t-b">Faux coeur</span>
+
+
+                        
+
+                        </il>
+                        <il className="vue place2"></il>
+                        <il className="vue place3"></il>
+                        <il className="vue place4"></il>
+                    </ul>
+                </div>
+
+                
+
+                {/* <btnPlayer/> */}
+            </section>
 
             
             <section className="message">
@@ -97,8 +152,8 @@ export function Acceuil(){
 export function btnPlayer(){
 
     return (
-            <div className="btmplayer">
-
+            <div className="btnplayer">
+                        
             </div>
     );
 }
