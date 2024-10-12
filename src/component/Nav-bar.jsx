@@ -6,7 +6,7 @@ import panier from '../Resset/Icone/Narbar_icone/panier.svg';
 import quite from '../Resset/Icone/Narbar_icone/quite.svg'; 
 
 import {useState} from "react"
-
+import {home , beat, cadeau, moi, contact,chat} from '../bodyPage/Import'
 
 
 
@@ -63,6 +63,40 @@ export default function Nav_Bar(){
 
             <div className={`toggle-bar-down ${controleur ? "toggle-bar-back" : ""}`}>
                     
+                    <ul className="menu">
+                        <li className="menu1">
+                            <img src={home}className='iconeT' alt="" />
+                            <span className="home">Home</span>
+                        </li>
+                        <li className="menu2">
+                            <img src={beat}className='iconeT' alt="" />
+                            <span className="beat">Beat</span>
+                        </li>
+                        <li className="menu3">
+                            <img src={cadeau}className='iconeT' alt="" />
+                            <span className="cadeau">
+                                recevoir mon cadeau
+                            </span>
+                        </li>
+                        <li className="menu4">
+                            <img src={moi} className='iconeT' alt="" />
+                            <span className="moi">
+                                Qui suis-je
+                            </span>
+                        </li>
+                        <li className="menu5">
+                            <img src={contact} className='iconeT' alt="" />
+                            <span className="contact">
+                                contactez-nous
+                            </span>
+                        </li>
+                        <li className="menu6">
+                            <img src={chat} className='iconeT' alt="" />
+                            <span className="chat">
+                                laissez-nous un commentaire
+                            </span>
+                        </li>
+                    </ul>
             </div>
         </div>
     );

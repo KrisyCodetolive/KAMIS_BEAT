@@ -1,16 +1,20 @@
-import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com , download , Play } from '../bodyPage/Import'
+import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com , download ,Play, ArrowB , Arrow_B, Pause, Croix, share, pub} from '../bodyPage/Import'
 
 export function Acceuil(){
 
     
     return (
+
         <div className="Body">
 
-            <section className="Pub">Publicité</section>
+            <section className="Pub">
+                {/* <img src={pub} className="pb"  alt="" /> */}
+                pub
+            </section>
 
 
             <section className="recommande">
-                {/* <h1 className="reh1">Recommandé</h1> */}
+                {/* <h1 className="reh1 h1">Recommandé</h1> */}
 
                 <div className="conteneur-rec">
 
@@ -87,6 +91,7 @@ export function Acceuil(){
                     </div>
 
                     <ul className="content-il">
+
                         <il className=" vue place1">
 
                             <img src={trap} width="50px" height="50px" className="image" alt="" />
@@ -102,7 +107,6 @@ export function Acceuil(){
                                 <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
                                 </span>
                             </div>
-
 
                         </il>
 
@@ -171,6 +175,11 @@ export function Acceuil(){
                     </ul>
                 </div>
 
+                <div className="content-PS">
+                    <Btn_Précedent/>
+                    <Btn_Suivant/>
+                </div>
+
                 
 
                 {/* <btnPlayer/> */}
@@ -208,6 +217,32 @@ export function Acceuil(){
                 
             </section>
 
+            <section className="toggle">
+
+                <div className="partieToggle1">
+
+                    <img src={trap} alt="" style={{ width: '40px'}} />
+                    <div className="title info">
+                        <h1>Faux coeur</h1>
+                        <h2>140 BPM . trap ragga</h2>
+                        <img src={sound} className="sound" style={{ width: '25px', height:'30px'}} alt="" />
+                    
+                    </div>
+
+                </div>
+
+                <div className="partieToggle2">
+                    <Bnt_Playertoggle/>
+
+                    <div className="option">
+                        <img src={download} style={{ width: '20px'}} alt="" />
+                        <img src={share} style={{ width: '20px'}} alt="" />
+                    </div>
+                </div>
+
+                <img src={Croix}  className='quite' alt="" style={{ width: '15px'}}/>
+            </section>
+
 
             
         </div>
@@ -224,13 +259,48 @@ export function btnPlayer(){
     );
 }
 
+export function Bnt_Playertoggle(){
+
+    return (
+
+        <div className="content-btn_Pt">
+            <img src={Arrow_B} alt="" style={{ width: '12px'}} />
+            <img src={Pause} alt="" style={{ width: '50px', transform:'translateY(3px)'}} />
+            <img src={Arrow_B} style={{transform: 'rotate(180deg)' , width: '12px'}} alt="" />
+        </div>
+    )
+}
 
 export function Button(){
 
     return(
         <button type="submit" className="connexion send">
             <h1>Envoyer</h1>
-            <img src={Send} className='IconeSend' alt="" />
+            <img src={Send}  className='IconeSend' alt="" />
+        </button>
+    );
+}
+
+export function Btn_Précedent(){
+
+    return(
+        <button type="submit" style={{ backgroundColor: 'rgba(191,191,191,0.61)'}} className="connexion send">
+
+            {/* <img src={ArrowB}  style={{ width: '25px'}}className='IconeSend' alt="" /> */}
+            <h1>Précedent</h1>
+            
+        </button>
+    );
+}
+
+export function Btn_Suivant(){
+
+    return(
+        <button type="submit" className="connexion send">
+            
+            <h1>Suivant</h1>
+            {/* <img src={ArrowB} className='IconeSend' alt="" style={{ width: '25px', transform: 'rotate(180deg)'}}/> */}
+            
         </button>
     );
 }

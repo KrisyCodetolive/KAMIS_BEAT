@@ -156,9 +156,10 @@
 
 
 .toggle-bar-down{
-    position: absolute;
+    position: fixed;
     background-color: #fbfbfb;
-    height: 1388px;
+    /* height: 1729px; */
+    height: 220vh;
     width: 60%;
     transform: translateX(-100%);
     z-index: -4;
@@ -168,6 +169,28 @@
 
 .toggle-bar-back{
     transform: translateX(0);
+}
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    transform: translateY(120px);
+    margin-left: 25px;
+    gap: 25px;
+    font-family: var(--font_inder);
+}
+
+li{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 5px;
+}
+
+.iconeT{
+    width: 20px;
+    height: 20px;
 }
 /* HAMBURGER */
 
