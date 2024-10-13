@@ -70,7 +70,6 @@
 .secondaire1{
     width: 50px;
     height: 70px;
-    /* background-color: burlywood; */
     transform: translate(-30px,70px);
     display: flex;
     justify-content: center;
@@ -83,6 +82,7 @@
 
 }
 .Aff-main{
+    position: relative;
     width: 90px;
     height: 110px;
     /* background-color: burlywood; */
@@ -92,6 +92,18 @@
     justify-content: center;
     gap: 5px;
     align-items: center;
+}
+
+.circle-ply{
+    position: absolute;
+    top:40px;
+    left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(18deg,rgba(102,132,238,0.95) 100%,#4E67C2 0);
+    box-shadow: 0 4px 14px 1px rgba(126, 150, 238, 0.95);
 }
 .lueur{
     position: absolute;
@@ -197,6 +209,17 @@
     align-items: center;
     gap: 2px;
 } */
+
+.content-music{
+    position: relative;
+}
+.play{
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+    
+}
+
 .btnplayer{
     border-radius: 50%;
     background-color: var(--colorMain);
@@ -259,6 +282,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 3px;
+    gap: 10px;
     transform: translate(2px,-5px);
 
 }
@@ -288,6 +313,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+input {
+    border-radius: 0;           /* Supprime l'arrondi */
+    -webkit-appearance: none;   /* Neutralise les styles spécifiques à Safari (iOS) */
+    -moz-appearance: none;      /* Neutralise les styles spécifiques à Firefox */
+    appearance: none;           /* Neutralise les styles globaux sur les autres navigateurs */
 }
 .title-mess{
     font-size: 20px;
@@ -407,18 +438,25 @@ input::placeholder {
 .toggle{
     position: fixed;
     display: flex;
+    transform: translateY(100%);
     gap: 25px;
     background-color: #F3F3F3;
     width: 100%;
     height: 75px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     bottom: 0px;
     box-shadow: 0px 5px 50px 2px rgba(0, 0, 0, 0.14);
     z-index: 3;
     /* border: 1px solid black; */
+    transition: transform 0.5s cubic-bezier(0.75, 0.06, 0.33, 1.4);
 }
-
+.toggle-back{
+    transform: translateY(0);
+}
+.toggle-fixed{
+    transform: translateY(0);
+}
 .partieToggle1 , .partieToggle2 {
     width: 50%;
 

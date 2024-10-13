@@ -1,8 +1,33 @@
-import { afro, rap, trap, sound, Arrow, Arrown, Send, Send_com , download ,Play, ArrowB , Arrow_B, Pause, Croix, share, pub} from '../bodyPage/Import'
+import { afro, rap, trap, sound, Arrow, Send, Send_com , download ,Play, ArrowB , Arrow_B, Pause, Croix, share, play , pause} from '../bodyPage/Import'
+import {useState} from "react"
+import { useRef } from 'react';
 
 export function Acceuil(){
 
+    const [Player,setPlayer]=useState(false)
+    const [currentPlayer,setcurrentPlayer]=useState(false)
+    const audioRef = useRef(null)
+
+    const TglPlayer = function() {
+
+        setPlayer(!Player);
     
+
+        if(!Player){
+            audioRef.current.play();
+        }else{
+            audioRef.current.pause();
+        }
+    }
+    const togglefixed = function (){
+        if(Player){
+            setcurrentPlayer(true)
+        }
+    }
+    const stop = function (){
+        setPlayer(!Player);
+        audioRef.current.currentTime = 0;
+    }
     return (
 
         <div className="Body">
@@ -31,19 +56,29 @@ export function Acceuil(){
 
                         <div className="Aff-main">
 
-                            
-
                             <img src={trap} className='Main-Aff' alt="" />
 
                             <div className="title">
                                 <h1>Faux coeur</h1>
                                 <h2>140 BPM . trap ragga</h2>
-                                <div >
-                                    <img src={sound} className="sound" alt="" />
-                                </div>
+                                <img src={sound} className="sound" alt="" />
                             </div>
 
+                            <div className="circle-ply" style={{width:'40px', height:'40px'}} onClick={TglPlayer}>
 
+                                {
+                                    Player ? 
+                                    (
+                                    <img src={play} style={{width:'20px',height:'20px'}} alt="" />
+                                   ) : 
+                                   
+                                   (
+                                   <img src={pause} style={{width:'20px',height:'20px', transform:'translateX(2px)'}} alt="" />)
+                                }
+                            </div>
+                                {/* 
+                                 */}
+                            
                         </div>
 
                         
@@ -52,7 +87,7 @@ export function Acceuil(){
                             <img src={afro} className='second-2' alt="" />
                         </div>
                     </div>
-                    <img src={Arrown} className='Arrow'  alt="" />
+                    <img src={Arrow} className='Arrow'  alt="" style={{transform: 'rotate(180deg)'}}/>
                 </div>
             
             </section>
@@ -94,7 +129,10 @@ export function Acceuil(){
 
                         <il className=" vue place1">
 
-                            <img src={trap} width="50px" height="50px" className="image" alt="" />
+                            <div className="content-music">
+                                <img src={trap} width="50px" height="50px" className="image" alt="" />
+                                <img src={Play} className="play" width="30px" height="30px" alt="" />
+                            </div>
 
                             <div className="content-t">
                                 <span className="t-i">Faux coeur</span>
@@ -103,8 +141,9 @@ export function Acceuil(){
                                 <span className="t-ty">trap rap</span>
 
                                 <span className="icone" width="40px">
-                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
+                                
                                 <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                <img src={share} style={{ width: '20px'}} alt="" />
                                 </span>
                             </div>
 
@@ -114,7 +153,10 @@ export function Acceuil(){
 
                         <il className="vue place2">
 
-                            <img src={rap} width="50px" height="50px" className="image" alt="" />
+                            <div className="content-music">
+                                <img src={rap} width="50px" height="50px" className="image" alt="" />
+                                <img src={Play} className="play" width="30px" height="30px" alt="" />
+                            </div>
 
                             <div className="content-t">
                                 <span className="t-i">Fauc coeur</span>
@@ -123,8 +165,8 @@ export function Acceuil(){
                                 <span className="t-ty">trap rap</span>
 
                                 <span className="icone" width="40px">
-                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
                                 <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                <img src={share} style={{ width: '20px'}} alt="" />
                                 </span>
                             </div>
 
@@ -134,7 +176,11 @@ export function Acceuil(){
                         <span className="bar"></span>
 
                         <il className="vue place3">
-                            <img src={afro} width="50px" height="50px" className="image" alt="" />
+
+                            <div className="content-music">
+                                <img src={afro} width="50px" height="50px" className="image" alt="" />
+                                <img src={Play} className="play" width="30px" height="30px" alt="" />
+                            </div>
 
                             <div className="content-t">
                                 <span className="t-i">Faux coeur</span>
@@ -143,8 +189,8 @@ export function Acceuil(){
                                 <span className="t-ty">trap rap</span>
 
                                 <span className="icone" width="40px">
-                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
                                 <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                <img src={share} style={{ width: '20px'}} alt="" />
                                 </span>
                             </div>
 
@@ -154,7 +200,11 @@ export function Acceuil(){
                         <span className="bar"></span>
 
                         <il className="vue place4">
-                            <img src={trap} width="50px" height="50px" className="image" alt="" />
+
+                            <div className="content-music">
+                                <img src={trap} width="50px" height="50px" className="image" alt="" />
+                                <img src={Play} className="play" width="30px" height="30px" alt="" />
+                            </div>
 
                             <div className="content-t">
                                 <span className="t-i">Faux coeur</span>
@@ -163,8 +213,8 @@ export function Acceuil(){
                                 <span className="t-ty">trap rap</span>
 
                                 <span className="icone" width="40px">
-                                <img src={Play} width="30px" height="30px" alt="" srcset="" />
-                                <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                    <img src={download} width="20px" height="20px" alt="" className='biff' srcset="" />
+                                    <img src={share} style={{ width: '20px'}} alt="" />
                                 </span>
                             </div>
 
@@ -217,8 +267,10 @@ export function Acceuil(){
                 
             </section>
 
-            <section className="toggle">
-
+            <section className={`toggle ${currentPlayer ? "toggle-back"  : ""}`}>
+                
+                
+                <audio ref={audioRef} src='/Audio/trapInstru.mp3'/>
                 <div className="partieToggle1">
 
                     <img src={trap} alt="" style={{ width: '40px'}} />
@@ -240,7 +292,7 @@ export function Acceuil(){
                     </div>
                 </div>
 
-                <img src={Croix}  className='quite' alt="" style={{ width: '15px'}}/>
+                <img src={Croix}  className='quite' alt="" style={{ width: '15px'}} onClick={stop}/>
             </section>
 
 
