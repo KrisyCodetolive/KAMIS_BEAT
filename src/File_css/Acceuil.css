@@ -111,7 +111,7 @@
     top: 20px;
     height: 80px;
     border-radius: 40%;
-    /* background-color: #B38017; */
+    background-color: #B38017;
     filter: blur(35px);
     z-index: -1;
 }
@@ -450,13 +450,28 @@ input::placeholder {
     z-index: 3;
     /* border: 1px solid black; */
     transition: transform 0.5s cubic-bezier(0.75, 0.06, 0.33, 1.4);
+    overflow: hidden;
+}
+.pl-toggle{
+    left: 210px;
+    bottom: 70px;
+}
+.timestamp{
+    content: "";
+    position: absolute;
+    height: 100%;
+    /* width: 100%; */
+    border-top-left-radius: 15px;
+    background: rgb(83,108,199);
+    background: linear-gradient(90deg, rgba(83,108,199,1) 43%, rgba(141,158,217,1) 100%);
+    z-index: -1;
+
+
 }
 .toggle-back{
     transform: translateY(0);
 }
-.toggle-fixed{
-    transform: translateY(0);
-}
+
 .partieToggle1 , .partieToggle2 {
     width: 50%;
 

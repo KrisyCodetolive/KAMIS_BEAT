@@ -1,17 +1,18 @@
 import { afro, rap, trap, sound, Arrow, Send, Send_com , download ,Play, ArrowB , Arrow_B, Pause, Croix, share, play , pause} from '../bodyPage/Import'
-import {useState} from "react"
-import { useRef } from 'react';
-
+import {useState, useRef, useEffect} from "react"
 export function Acceuil(){
 
     const [Player,setPlayer]=useState(false)
     const [currentPlayer,setcurrentPlayer]=useState(false)
+    const [currently,setcurrently]=useState(0)
     const audioRef = useRef(null)
 
-    const TglPlayer = function() {
+   
+     const TglPlayer = function() {
 
         setPlayer(!Player);
-    
+        setcurrentPlayer(true)
+        
 
         if(!Player){
             audioRef.current.play();
@@ -19,14 +20,18 @@ export function Acceuil(){
             audioRef.current.pause();
         }
     }
-    const togglefixed = function (){
-        if(Player){
-            setcurrentPlayer(true)
-        }
-    }
+    
+    useEffect(
+        ()=>{audioRef.current.addEventListener("timeupdate",()=>{setcurrently(audioRef.current.currentTime)} )}
+    )
+
     const stop = function (){
-        setPlayer(!Player);
+        
+        setcurrentPlayer(false)
+        setPlayer(false)
+        console.log(Player)
         audioRef.current.currentTime = 0;
+        audioRef.current.pause();
     }
     return (
 
@@ -267,12 +272,12 @@ export function Acceuil(){
                 
             </section>
 
-            <section className={`toggle ${currentPlayer ? "toggle-back"  : ""}`}>
+            <section className={`toggle toggle-back  ${currentPlayer ? "toggle-back"  : ""}`}>
                 
-                
+            
+                    
                 <audio ref={audioRef} src='/Audio/trapInstru.mp3'/>
                 <div className="partieToggle1">
-
                     <img src={trap} alt="" style={{ width: '40px'}} />
                     <div className="title info">
                         <h1>Faux coeur</h1>
@@ -280,19 +285,36 @@ export function Acceuil(){
                         <img src={sound} className="sound" style={{ width: '25px', height:'30px'}} alt="" />
                     
                     </div>
-
                 </div>
 
                 <div className="partieToggle2">
-                    <Bnt_Playertoggle/>
+                    {/* <Bnt_Playertoggle/> */}
+                    <img src={Arrow_B} alt="" style={{ width: '12px'}} />
+                    <div className="circle-ply pl-toggle" style={{width:'20px', height:'20px'}} onClick={TglPlayer}>
 
+                                {
+                                    Player ? 
+                                    (
+                                    <img src={play} style={{width:'10px',height:'10px'}} alt="" />
+                                   ) : 
+                                   
+                                   (
+                                   <img src={pause} style={{width:'10px',height:'10px', transform:'translateX(2px)'}} alt="" />)
+                                }
+                    </div>
+                    <img src={Arrow_B} style={{transform: 'rotate(180deg)' , width: '12px'}} alt="" />
                     <div className="option">
                         <img src={download} style={{ width: '20px'}} alt="" />
                         <img src={share} style={{ width: '20px'}} alt="" />
                     </div>
+                    
                 </div>
-
+                
+                <div className='timestamp' style={{width:currently}}></div>
                 <img src={Croix}  className='quite' alt="" style={{ width: '15px'}} onClick={stop}/>
+
+
+                
             </section>
 
 
@@ -302,14 +324,14 @@ export function Acceuil(){
 }
 
 
-export function btnPlayer(){
+// export function btnPlayer(){
 
-    return (
-            <div className="btnplayer">
-                        
-            </div>
-    );
-}
+    
+    
+//     return (
+        
+//     );
+// }
 
 export function Bnt_Playertoggle(){
 
