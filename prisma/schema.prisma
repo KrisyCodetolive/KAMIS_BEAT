@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum FileType {
+  mp3
+  zip 
+}
+
+
+
+//Model 
+model Instrumental {
+
+  instruId Int @id @default(autoincrement())
+  title String @unique 
+  bpm  String
+  gamme String @db.VarChar(10)
+  directory String @unique
+  cover String? @unique 
+  url String @default("/path/to/instru")
+  audioFiles AudioFile[]
+  date DateTime @default(now())
+}
+
+model AudioFile {
+  id             Int      @id @default(autoincrement())
+  type           FileType
+  path            String   @unique
+  price           String   @default("null")
+  instrumentalId Int      
+  instrumental   Instrumental @relation(fields: [instrumentalId], references: [instruId], onDelete: Cascade , onUpdate: Cascade )
+  createdAt      DateTime    @default(now())
+}
+
+//npx prisma migrate dev --name nom_de_la_migration
